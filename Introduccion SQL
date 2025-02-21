@@ -1,0 +1,41 @@
+/*
+Implentacion de Dase de datos relacionales en un sistema de informacion
+2025/02/20 07:29
+Camila Aseret Rodriguez Baldovino 
+Introduccion a SQL
+*/
+
+-Identificar los campos de la base de datos de pruebas en cada tabla utilizando DESC <table>
+DESC detalle_horario
+DESC horario
+DESC plantilla_detalle_horario
+-Verificar los registros de cada tabla utilizando 	SELECT
+SELECT * FROM detalle_horario
+SELECT * FROM horario 
+SELECT * FROM plantilla_detalle_horario
+
+-Insertar registros en la tabla vacía utilizando 
+	INSERT
+insert into detalle_horario ( horario_id, hora_salida, hora_entrada, codigo_incapacidad)
+values ( 1, '2025/02/14 04:30', '2025/02/14 05:30', 'viaje_negocios');
+
+-Crear una tabla llamada usuarios con nombre, apellido y departamento para establecer relaciones con los horarios
+CREATE TABLE usuarios (
+usuario_id int(11) NOT NULL,
+nombre varchar(25) NOT NULL,
+apellido varchar(25) DEFAULT NULL,
+departamento varchar(25) DEFAULT NULL);
+
+
+-Insertar 10 usuarios
+insert into usuarios (usuario_id, nombre, apellido, departamento)
+values ( 1, 'Camila', 'Rodriguez', 'JF'),
+( 2, 'Teresa', 'Lopez', 'EP'),
+( 3, 'Oscar', 'Benavides', 'LI'),
+( 4, 'Manuel', 'Ramirez', 'DR'),
+( 5, 'Denisse', 'Ramos', 'PH'),
+( 6, 'Jorge', 'Baldovino', 'UH'),
+( 7, 'Samantha', 'Nuñez', 'TQ'),
+( 8, 'Alfredo', 'Gutierrez', 'GK'),
+( 9, 'Paulina', 'Avila', 'MK'),
+( 10, 'Oswaldo', 'Vega', 'TY');
