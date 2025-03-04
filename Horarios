@@ -1,5 +1,5 @@
 /*
-Implentacion de Dase de datos relacionales en un sistema de informacion
+Implentacion de Base de datos relacionales en un sistema de informacion
 2025/02/20 07:29
 Camila Aseret Rodriguez Baldovino 
 Introduccion a SQL
@@ -9,7 +9,7 @@ Introduccion a SQL
 DESC detalle_horario
 DESC horario
 DESC plantilla_detalle_horario
--Verificar los registros de cada tabla utilizando 	SELECT
+-Verificar los registros de cada tabla utilizando SELECT
 SELECT * FROM detalle_horario
 SELECT * FROM horario 
 SELECT * FROM plantilla_detalle_horario
