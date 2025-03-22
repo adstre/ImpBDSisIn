@@ -1,4 +1,5 @@
-Ejercicio 1 
+Camila Aseret Rodriguez Baldovino 4:J T/V Aula 3 
+Ejercicio 1: 
 CREATE TABLE customers (
     customer_id INT,
     type_phone TEXT,
