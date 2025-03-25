@@ -1,0 +1,18 @@
+Camila Aseret Rodriguez Baldovino
+
+ejercicio 1:
+CREATE TABLE casos (
+    Caso varchar(20)
+);
+
+INSERT INTO casos ( Caso ) VALUES
+    ('A'),
+    ('B'),
+    ('C');
+
+SELECT perm FROM (
+    SELECT CONCAT(a.Caso, b.Caso, c.Caso) AS perm
+    FROM casos a
+    JOIN casos b ON a.Caso != b.Caso
+    JOIN casos c ON a.Caso != c.Caso AND b.Caso != c.Caso
+) AS subquery;
