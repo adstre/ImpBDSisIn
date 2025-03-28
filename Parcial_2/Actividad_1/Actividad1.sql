@@ -20,9 +20,7 @@ INSERT INTO EJERCICIO2 (DESARROLLO,ETAPA,FINALIZADO) VALUES
 SELECT DESARROLLO FROM EJERCICIO2 WHERE FINALIZADO= '';
 
 
---Ejercicio 2
-
-
+--Ejercicio 2:
 CREATE TABLE customers (
     customer_id INT,
     type_phone TEXT,
@@ -45,8 +43,7 @@ SELECT
 FROM customers
 GROUP BY customer_id;
 
---Ejercicio 3
-
+--Ejercicio 3:
 CREATE TABLE candidato (
     id_candidatos INT,
     descripcion VARCHAR (30)
