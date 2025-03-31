@@ -1,4 +1,10 @@
+/* 
+Implementacion de una base de datos en un sistema de informacion
+2025/03/26
 Camila Aseret Rodriguez Baldovino 4:J T/V
+Actividad 1
+*/
+
 --Ejercicio 1
 
 CREATE TABLE EJERCICIO2 (
@@ -19,8 +25,8 @@ INSERT INTO EJERCICIO2 (DESARROLLO,ETAPA,FINALIZADO) VALUES
 
 SELECT DESARROLLO FROM EJERCICIO2 WHERE FINALIZADO= '';
 
-
 --Ejercicio 2:
+
 CREATE TABLE customers (
     customer_id INT,
     type_phone TEXT,

@@ -1,0 +1,44 @@
+ejercicio 3:
+CREATE TABLE numeros (
+    Entero int
+);
+
+INSERT INTO numeros ( Entero ) VALUES
+    (5),
+    (6),
+    (10),
+    (10),
+    (13),
+    (14),
+    (17),
+    (20),
+    (81),
+    (90),
+    (76);
+
+
+media:
+SELECT AVG (Entero) AS media
+From numeros; 
+
+mediana:
+WITH Ordenados AS (
+    SELECT Entero, 
+           ROW_NUMBER() OVER (ORDER BY Entero) AS fila, 
+           COUNT(*) OVER () AS total_filas
+    FROM numeros
+)
+SELECT Entero AS mediana
+FROM Ordenados
+WHERE fila = (total_filas + 1) / 2;
+
+moda:
+SELECT Entero 
+FROM numeros
+GROUP BY Entero
+ORDER BY COUNT(*) DESC
+LIMIT 1;
+
+rango:
+SELECT MAX(Entero) - MIN(Entero) AS rango
+FROM numeros;
