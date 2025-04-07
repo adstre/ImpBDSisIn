@@ -1,0 +1,19 @@
+Ejercicio 1:
+CREATE TABLE materiales (
+    Producto varchar(30),
+    Cantidad int
+);
+
+INSERT INTO materiales ( Producto, Cantidad) VALUES
+	('Lapíz', 3 ),
+    ('Borrador', 4 ),
+    ('Cuaderno', 2 );
+
+WITH RECURSIVE numeros AS (
+  SELECT 1 AS n
+  UNION ALL
+  SELECT n + 1 FROM numeros WHERE n < 100
+)
+SELECT t.producto, 1 AS cantidad
+FROM materiales t
+JOIN numeros n ON n.n <= t.cantidad;
