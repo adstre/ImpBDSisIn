@@ -1,0 +1,29 @@
+Ejercicio 1:
+CREATE TABLE registros (
+    Flujo varchar (30),
+    Paso INT,
+    Estado varchar (30)
+);
+
+
+INSERT INTO registros (Flujo, Paso, Estado) VALUES
+    ('Alpha', 2, 'Finalizado'),
+    ('Alpha', 3, 'Corriendo'),
+    ('Bravo', 1, 'Finalizado'),
+    ('Bravo', 2, 'Finalizado'),
+    ('Charlie', 1, 'Corriendo'),
+    ('Charlie', 2, 'Corriendo'),
+    ('Delta', 1, 'Error'),
+    ('Delta', 2, 'Error'),
+    ('Echo', 1, 'Corriendo'),
+    ('Echo', 2, 'Finalizado');
+
+SELECT Flujo,
+       CASE 
+           WHEN COUNT(DISTINCT Estado) = 1 THEN MIN(Estado)  
+           WHEN COUNT(DISTINCT Estado) > 1 AND 
+                MAX(Estado = 'Error') THEN 'Indeterminado'  
+           ELSE 'Corriendo'  
+       END AS Estado_General
+FROM registros
+GROUP BY Flujo;
