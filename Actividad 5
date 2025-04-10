@@ -27,3 +27,25 @@ SELECT Flujo,
        END AS Estado_General
 FROM registros
 GROUP BY Flujo;
+
+Ejercicio 2:
+CREATE TABLE Datos (
+    Secuencia INT,
+    Sintaxis VARCHAR(80)
+);
+
+INSERT INTO Datos (Secuencia, Sintaxis)
+VALUES
+(1, 'SELECT'),
+(2, 'Producto,'),
+(3, 'Precio,'),
+(4, 'Disponibilidad,'),
+(5, 'FROM'),
+(6, 'Productos'),
+(7, 'WHERE'),
+(8, 'Precio'),
+(9, '>100');
+
+SELECT
+    GROUP_CONCAT(Sintaxis ORDER BY Secuencia SEPARATOR ' ') AS Sintaxis
+FROM Datos;
