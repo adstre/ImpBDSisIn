@@ -80,4 +80,4 @@ FROM
     marcadores_globales
 GROUP BY
     LEAST(JugadorA, JugadorB),
-    GREATEST(JugadorA, JugadorB
+    GREATEST(JugadorA, JugadorB);
