@@ -42,12 +42,12 @@ INSERT INTO licencias (id_empleado, licencia) VALUES
 (5005, 'Tipo D');
 
   
-SELECT a.id_empleado AS id_empleado_1, b.id_empleado AS id_empleado_2, COUNT(*) AS coincidencias
+SELECT a.id_empleado AS empleado_1, b.id_empleado AS empleado_2, COUNT(*) AS coincidencias
 FROM licencias a
-JOIN licencias b ON a.licencia = b.licencia AND a.id_empleado != b.id_empleado
+JOIN licencias b ON a.licencia = b.licencia AND a.id_empleado < b.id_empleado
 GROUP BY a.id_empleado, b.id_empleado
-HAVING COUNT() = (SELECT COUNT() FROM licencias c WHERE c.id_empleado = a.id_empleado)
-AND COUNT() = (SELECT COUNT() FROM licencias d WHERE d.id_empleado = b.id_empleado);
+HAVING COUNT(*) = (SELECT COUNT(*) FROM licencias c WHERE c.id_empleado = a.id_empleado)
+AND COUNT(*) = (SELECT COUNT(*) FROM licencias d WHERE d.id_empleado = b.id_empleado);
 
 Ejercicio 3:
 CREATE TABLE numeros (
